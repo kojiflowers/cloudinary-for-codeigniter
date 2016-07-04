@@ -19,7 +19,7 @@ Luckily, the solution is actually fairly easy to implement and involves just one
 
 **Implementing the Solution:**
 
-1. In the CodeIgniter "application/libraries"" folder put your "cloudinary" folder (containing the Cloudinary PHP API library) and the file called Cloudinarylib.php located in the "cloudinary-for-codeigniter" folder (this is the dummy library).
+1. In the CodeIgniter "application/libraries" folder put your "cloudinary" folder (containing the Cloudinary PHP API library) and the file called Cloudinarylib.php located in the "cloudinary-for-codeigniter" folder (this is the dummy library).
 
 2. In "Cloudinarylib.php" file, replace the placeholder API connect info with your actual API connect info:
 ```php
