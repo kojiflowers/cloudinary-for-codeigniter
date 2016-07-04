@@ -2,6 +2,8 @@
 /**
  * This is a "dummy" library that just loads the actual library in the construct.
  * This technique prevents issues from CodeIgniter 3 when loading libraries that use PHP namespaces.
+ * This file can be used with any PHP library that uses namespaces.  Just copy it, change the name of the class to match your library
+ * and configs and go to town.
  */
 
 defined('BASEPATH') OR exit('No direct script access allowed');
