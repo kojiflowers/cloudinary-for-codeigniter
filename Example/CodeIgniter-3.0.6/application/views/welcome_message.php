@@ -80,8 +80,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<p>Luckily, the solution is actually fairly easy to implement and involves just one extra step to indirectly load the Cloudinary library into CodeIgniter via a "dummy" library.</p>
 
 		<h4>Implementing the Solution:</h4>
-		<p>1. In the CodeIgniter "application/libraries" folder put your "cloudinary" folder (containing the Cloudinary PHP API library) and the file called Cloudinarylib.php located in the "cloudinary-for-codeigniter" folder (this is the dummy library).</p>
-		<p>2. In "Cloudinarylib.php" file, replace the placeholder API connect info with your actual API connect info:</p>
+		<p>1. In the CodeIgniter "application/libraries" folder, put your "cloudinary" folder (containing the Cloudinary PHP API library) and the file called Cloudinarylib.php (located in the "cloudinary-for-codeigniter" folder).</p>
+		<p>2. Open the "Cloudinarylib.php" file and replace the placeholder API connect info with your actual API connect info:</p>
 		<pre>
 &lt;?php
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -107,7 +107,7 @@ class Cloudinarylib {
 	</pre>
 
 		<h4>Using The Cloudinary Library Within CodeIgniter</h4>
-		<p>Once the above steps are completed, your Cloudinary API library will be availabe via the "cloudinarylib" name and can be loaded like any other CodeIgniter library.</p>
+		<p>3. Once the above steps are completed, your Cloudinary API library will be availabe via the "cloudinarylib" name and can be loaded like any other CodeIgniter library.</p>
 		<p>Below is my example, using the standard welcome page controller and the "sample" image from Cloudinary:</p>
 	<pre>
 	&lt;?php
