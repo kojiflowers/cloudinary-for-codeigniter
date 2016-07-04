@@ -6,14 +6,17 @@ This dummy library technique can be used to get around CodeIgniter 3's issues wi
 **This project is still very much in development | Master branch is the main branch. / Dev branch is the working branch.**
 
 **The Problem**
+
 As I found out on a project just a little while ago, CodeIgniter 3 does not play nice with "libraries" that use PHP namespaces and that are directly loaded within the "libraries" folder.
 This becomes a problem because several PHP based API services use namespaces both to initialize the library code and to interact with the API and thus, they are not as plug and play as desired.
 Case in point: Cloudinary and their PHP API library.  If you try to load and use Cloudinary's PHP library the normal way in CodeIgniter, it breaks due to the heavy use of namespaces both to setup the API connection and throughout the library itself.
 
 **The Solution**
+
 Luckily, the solution is actually fairly easy to implement and involves just one extra step to indirectly load the Cloudinary library into CodeIgniter via a "dummy" library.  
 
 **Implementing the Solution:**
+
 1. In the CodeIgniter "application/libraries"" folder put your "cloudinary" folder (containing the Cloudinary PHP API library) and the file called Cloudinarylib.php (this is the dummy library).
 2. in "Cloudinarylib.php" replace the api info with your actual api info:
 ```php
@@ -41,6 +44,7 @@ class Cloudinarylib {
 ```
 
 **Using The Cloudinary Library Within CodeIgniter**
+
 Once the above steps are completed, your Cloudinary API library will be availabe via the "cloudinarylib" name and can be loaded like any other CodeIgniter library.
 Below is my example, using the standard welcome page controller and the "sample" image from Cloudinary:
 
