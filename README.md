@@ -5,6 +5,6 @@ This dummy library technique can be used to get around CodeIgniter 3's issues wi
 
 **This project is still very much in development**
 
-** Master branch is the main branch. **
+**Master branch is the main branch.**
 
-** Dev branch is the working branch.**
+**Dev branch is the working branch.**
