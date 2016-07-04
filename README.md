@@ -17,7 +17,7 @@ Luckily, the solution is actually fairly easy to implement and involves just one
 1. In the CodeIgniter "application/libraries"" folder put your "cloudinary" folder (containing the Cloudinary PHP API library) and the file called Cloudinarylib.php (this is the dummy library).
 2. in "Cloudinarylib.php" replace the api info with your actual api info:
 ```php
-&lt;?php
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 // setup the dummy class for Cloudinary
@@ -45,7 +45,7 @@ Once the above steps are completed, your Cloudinary API library will be availabe
 Below is my example, using the standard welcome page controller and the "sample" image from Cloudinary:
 
 ```php
-	&lt;?php
+	<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
@@ -71,5 +71,5 @@ class Welcome extends CI_Controller {
 
 In your view, you echo the variable like you normally would to display the image:
 ```php
-&lt;?php echo $image; ?&gt;
+<?php echo $image; ?>
 ```
