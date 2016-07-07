@@ -4,25 +4,15 @@ This repo demonstrates how to integrate the latest Cloudinary API PHP library in
 
 This dummy library technique can be used to get around CodeIgniter 3's issues with loading libraries dependent on namespaces like Cloudinary's.
 
-**This project is still very much in development | Master branch is the main branch. / Dev branch is the working branch.**
+_This project is still very much in development | Master branch is the main branch. / Dev branch is the working branch._
 
-**The Problem**
+**Integrate Cloudinary PHP API Library into CodeIgniter**
 
-As I found out on a project just a little while ago, CodeIgniter 3 does not play nice with "libraries" that use PHP namespaces and that are directly loaded within the "libraries" folder.
+1. Clone this project (if you haven't already)
 
-This becomes a problem because several PHP based API services use namespaces both to initialize the library code and to interact with the API and thus, they are not as plug and play as desired.
+2. In the CodeIgniter "application/libraries" folder, put your "cloudinary" folder (containing the Cloudinary PHP API library) and the file called Cloudinarylib.php (located in the "cloudinary-for-codeigniter" folder).
 
-Case in point: Cloudinary and their PHP API library.  If you try to load and use Cloudinary's PHP library the normal way in CodeIgniter, it breaks due to the heavy use of namespaces both to setup the API connection and throughout the library itself.
-
-**The Solution**
-
-Luckily, the solution is actually fairly easy to implement and involves just one extra step to indirectly load the Cloudinary library into CodeIgniter via a "dummy" library.  
-
-**Implementing the Solution:**
-
-1. In the CodeIgniter "application/libraries" folder, put your "cloudinary" folder (containing the Cloudinary PHP API library) and the file called Cloudinarylib.php (located in the "cloudinary-for-codeigniter" folder).
-
-2. Open the "Cloudinarylib.php" file and replace the placeholder API connect info with your actual API connect info:
+3. Open the "Cloudinarylib.php" file and replace the placeholder API connect info with your actual API connect info:
 
 ```php
 <?php
@@ -50,9 +40,9 @@ class Cloudinarylib {
 
 **Using The Cloudinary Library Within CodeIgniter**
 
-3. Once the above steps are completed, your Cloudinary API library will be availabe via the "cloudinarylib" name and can be loaded like any other CodeIgniter library.
+4. Once the above steps are completed, your Cloudinary API library will be availabe via the "cloudinarylib" name and can be loaded like any other CodeIgniter library.
 
-Below is my example, using the standard welcome page controller and the "sample" image from Cloudinary:
+Below is from the CodeIgniter sample site within the Example folder which uses the standard welcome page controller and the "sample" image from Cloudinary:
 
 ```php
 	<?php

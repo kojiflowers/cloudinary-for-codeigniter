@@ -71,17 +71,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<h1>Cloudinary API and CodeIgniter</h1>
 
 	<div id="body">
-		<h4>The</h4>
-		<p>As I found out on a project just a little while ago, CodeIgniter 3 does not play nice with "libraries" that use PHP namespaces and that are directly loaded within the "libraries" folder.</p>
-		<p>This becomes a problem because several PHP based API services use namespaces both to initialize the library code and to interact with the API and thus, they are not as plug and play as desired.</p>
-		<p>Case in point: Cloudinary and their PHP API library.  If you try to load and use Cloudinary's PHP library the normal way in CodeIgniter, it breaks due to the heavy use of namespaces both to setup the API connection and throughout the library itself.</p>
-
-		<h4>The Solution</h4>
-		<p>Luckily, the solution is actually fairly easy to implement and involves just one extra step to indirectly load the Cloudinary library into CodeIgniter via a "dummy" library.</p>
-
-		<h4>Implementing the Solution:</h4>
-		<p>1. In the CodeIgniter "application/libraries" folder, put your "cloudinary" folder (containing the Cloudinary PHP API library) and the file called Cloudinarylib.php (located in the "cloudinary-for-codeigniter" folder).</p>
-		<p>2. Open the "Cloudinarylib.php" file and replace the placeholder API connect info with your actual API connect info:</p>
+		<h4>Integrate Cloudinary PHP API Library into CodeIgniter:</h4>
+		<p>1. Clone this project out on <a target="_blank" title="cloudinary-for-codeigniter on github" href="https://github.com/kojiflowers/cloudinary-for-codeigniter">GitHub</a> if you haven't already.</p>
+		<p>2. In the CodeIgniter "application/libraries" folder, put your "cloudinary" folder (containing the Cloudinary PHP API library) and the file called Cloudinarylib.php (located in the "cloudinary-for-codeigniter" folder).</p>
+		<p>3. Open the "Cloudinarylib.php" file and replace the placeholder API connect info with your actual API connect info:</p>
 		<pre>
 &lt;?php
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -107,8 +100,8 @@ class Cloudinarylib {
 	</pre>
 
 		<h4>Using The Cloudinary Library Within CodeIgniter</h4>
-		<p>3. Once the above steps are completed, your Cloudinary API library will be availabe via the "cloudinarylib" name and can be loaded like any other CodeIgniter library.</p>
-		<p>Below is my example, using the standard welcome page controller and the "sample" image from Cloudinary:</p>
+		<p>4. Once the above steps are completed, your Cloudinary API library will be availabe via the "cloudinarylib" name and can be loaded like any other CodeIgniter library.</p>
+		<p>Below is from the CodeIgniter sample site within the Example folder which uses the standard welcome page controller and the "sample" image from Cloudinary:</p>
 	<pre>
 	&lt;?php
 defined('BASEPATH') OR exit('No direct script access allowed');
