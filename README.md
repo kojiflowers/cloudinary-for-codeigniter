@@ -75,3 +75,9 @@ In your welcome_page view, echo the variable like you normally would to display 
 ```
 
 If done correctly, you should see an image popup at the bottom of your welcome page.
+
+**Additional Info**
+
+Feel free to fork this project and make some cool stuff with it.  It is still early stage but I welcome help from the dev community.
+
+For updates and/or other stuff to check out, visit my [blog](http://kojiflowers.com/my-blog) or follow me on [Twitter: @KojiFlowers](http://twitter.com/kojiflowers).
