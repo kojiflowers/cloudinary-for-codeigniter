@@ -44,6 +44,7 @@ class Cloudinarylib {
 
 Below is from the CodeIgniter sample site within the Example folder which uses the standard welcome page controller and the "sample" image from Cloudinary:
 
+*** Note: The Cloudinarylib.php file and cloudinary folder have already been placed in example site***
 ```php
 	<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -64,6 +65,16 @@ class Welcome extends CI_Controller {
 		// execute cloudinary api call to grab sample image and assign to $image variable in the view
 		$data['image'] = cl_image_tag("sample.jpg", array( "alt" => "Sample Image" ));
 
+        /* The rest of the Cloudinary library is available using it's namespace "\Cloudinary\"
+        To see it in action, uncomment code line below and replace "url_to_image" with an image url
+        and when the welcome page loads it will upload to your Cloudinary account and return a response object
+        in the $data['imageupload'] array.
+
+        -- See Cloudinary PHP API docs for additional examples.
+        */
+
+        //$data['imageupload'] = \Cloudinary\Uploader::upload("https://kojiflowers.com/wp-content/uploads/2017/01/vide-1050x478.png");
+
 		$this->load->view('welcome_message',$data);
 	}
 }
@@ -76,6 +87,17 @@ In your welcome_page view, echo the variable like you normally would to display 
 
 If done correctly, you should see an image popup at the bottom of your welcome page.
 
+***Using the rest of the Cloudinary API...***
+
+As for the rest of the library, now you can access it by using the "\Cloudinary\" namespace in whichever class you have loaded the Cloudinary library (note: this is currently how Cloudinary's examples use the PHP API).
+
+```php
+$data['imageupload'] = \Cloudinary\Uploader::upload("https://kojiflowers.com/wp-content/uploads/2017/01/vide-1050x478.png");
+        
+```
+
+In the above example the upload would be executed on page load and the result object would be available in the view via the $imageupload variable.
+        
 **Additional Info**
 
 Feel free to fork this project and make some cool stuff with it.  It is still early stage but I welcome help from the dev community.
